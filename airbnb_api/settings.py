@@ -87,6 +87,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'airbnb_api.urls'
+AUTH_USER_MODEL = 'account.CustomUser'
 
 TEMPLATES = [
     {
