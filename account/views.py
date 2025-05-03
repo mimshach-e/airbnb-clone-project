@@ -8,7 +8,7 @@ from .serializers import CustomUserSerializer, LoginSerializer
 
 
 # User Registration View: A view to register new users
-class UserRegistrationView(generics.CreateAPIView):
+class ListRegisterUserView(generics.ListCreateAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = CustomUserSerializer
     permission_classes = [permissions.AllowAny]
@@ -45,7 +45,7 @@ class UserLoginView(views.APIView):
 
     
 # User Profile View: A view for users to view their account details
-class UserProfileView(generics.ListAPIView):
+class UserProfileView(generics.RetrieveUpdateDestroyAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = CustomUserSerializer
     permission_classes = [permissions.IsAuthenticated]
